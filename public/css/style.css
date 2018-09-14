@@ -141,7 +141,13 @@ figure {
 @media screen and (max-width: 768px) {
   .fh5co-cover,
   .fh5co-hero {
-    height: 700px;
+    height: 900px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 768px) {
+  .fh5co-cover,
+  .fh5co-hero {
+    height: 800px;
   }
 }
 .fh5co-cover .fh5co-overlay,
@@ -162,7 +168,7 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -237,7 +243,11 @@ figure {
     display: none;
   }
 }
-
+@media screen and (max-width: 768px) and (min-width: 768px)  {
+  .fh5co-cover .desc .desc2 {
+    display: block;
+  }
+}
 /* Superfish Override Menu */
 .sf-menu {
   margin: 7px 0 0 0 !important;
@@ -541,14 +551,25 @@ figure {
 }
 @media screen and (max-width: 480px) {
   .tabulation label {
-    width: 25%;
+    width: 100%;
+    font-size: 12px;
   }
 }
-
-
+@media screen and (max-width: 480px) {
+  .tabulation {
+    margin-top: -225px;
+  }
+}
 @media screen and (max-width: 480px) {
   .tabulation input[type="text"] {
     float: right;
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .form-control {
+    float: left;
+    font-size: 12px !important;
   }
 }
 @media screen and (max-width: 480px) {
@@ -559,7 +580,7 @@ figure {
 }
 @media screen and (max-width: 480px) {
   .tabulation .input-group {
-    width: 75%;
+    width: 100%;
     float: right;
   }
 }
@@ -620,7 +641,7 @@ figure {
 }
 
 .mt {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 div.cs-select span {
@@ -821,6 +842,16 @@ div.cs-select span {
   -o-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
   background: rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 768px) and (min-width: 480px) {
+  .tabulation {
+    margin-top: -180px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 768px) {
+  .tabulation {
+    margin-top: -7em;
+  }
 }
 @media screen and (max-width: 768px) {
   .fh5co-tours > div:hover:after {
@@ -1960,3 +1991,11 @@ div.cs-select span {
 }
 
 /*# sourceMappingURL=style.css.map */
+@media screen and (max-width: 991px) and (min-width: 768px){
+  .labelPerson{
+    font-size: 10px !important;
+  }
+  .class-of-chair{
+      padding:2px
+  }
+}

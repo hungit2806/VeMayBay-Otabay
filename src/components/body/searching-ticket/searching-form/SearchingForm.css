@@ -31,3 +31,45 @@
     margin: 0 !important;
     border-collapse: separate !important;;
 }
+.modal {
+  text-align: center;
+}
+.modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-header{
+    background-color: #F78536
+}
+.modal-title{
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    text-align: center
+}
+.modal-body h4{
+    margin:5px;
+    color:#000;
+    font-weight: bold;
+}
+.modal-body li{
+    list-style-type: none;
+}
+.modal-body li a b{
+    font-weight: normal !important;
+}
+.modal-body li a{
+    cursor: pointer;
+}
+.modal-body li a:hover{
+    color:#B71C1C;
+}
+.modal-body .title{
+    font-weight: bold !important;
+}
