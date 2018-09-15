@@ -9,13 +9,18 @@ import baby from '../../../../assets/icons/baby.png'
 import adult from '../../../../assets/icons/adult.png'
 import search from '../../../../assets/icons/search.png'
 import DatePicker from '../../../extend-component/DatePicker';
-import { DataAirport } from '../../../../data-mock/data-airport'
+import { DataAirport,RelationshipAirport } from '../../../../data-mock/data-airport'
 import moment from 'moment';
 
 import './SearchingForm.css'
 const PAGE_ONEWAY = 0;
 const PAGE_ROUNDTRIP = 1;
+var mienBac = DataAirport.NoiDia.MienBac;
+var mienTrung = DataAirport.NoiDia.MienTrung;
+var mienNam = DataAirport.NoiDia.MienNam;
+
 export default class SearchingForm extends Component{
+    
     constructor(props){
         super(props)
         this.state={
@@ -23,26 +28,83 @@ export default class SearchingForm extends Component{
             dateFrom : new Date(),
             dateTo : new Date(),
             valueFrom:'',
-            valueTo:''  
+            valueTo:'',
+            MSFrom:'',
+            MSTo:''  
         }
     }
-    setStateInputFrom(from){
-        this.setState({
-            valueFrom:from
-        })
+    setStateInput(value,MS,type){
+        if(type=='from'){
+            this.setState({
+                valueFrom:value,
+                MSFrom:MS
+            })
+        }else{
+            this.setState({
+                valueTo:value,
+                MSTo:MS
+            })
+        }
+    }
+    rederAllAirFlight(obj,type){
+        var renderReturn = []
+        for (var prop in obj) {
+            var object = obj[prop];
+            renderReturn.push(<li data-dismiss="modal" onClick={this.setStateInput.bind(this,(object.Ten+' ('+object.Ma+')'),object.Ma,type)}><a><b>{object.Ten}</b><span>({object.Ma})</span> </a></li>)           
+        }
+        return renderReturn;
+    }
+    renderAirPortMienTrung(type){
+        var renderReturn = [];
+        var object = null;
+        if(type=='from'){
+            object = RelationshipAirport[this.state.MSTo].MienTrung;
+        }else{
+            object = RelationshipAirport[this.state.MSFrom].MienTrung;
+        }
+       
+        for(let i=0; i < object.length; i++){
+            renderReturn.push(<li data-dismiss="modal" onClick={this.setStateInput.bind(this,(object[i].Ten+' ('+object[i].Ma+')'),object[i].Ma,type)}><a><b>{object[i].Ten}</b><span>({object[i].Ma})</span> </a></li>)           
+        }
+        return renderReturn;
+    }
+    renderAirPortMienBac(type){
+        var renderReturn = [];
+        var object = null;
+        if(type=='from'){
+            object = RelationshipAirport[this.state.MSTo].MienBac;
+        }else{
+            object = RelationshipAirport[this.state.MSFrom].MienBac;
+        }
+       
+        for(let i=0; i < object.length; i++){
+            renderReturn.push(<li data-dismiss="modal" onClick={this.setStateInput.bind(this,(object[i].Ten+' ('+object[i].Ma+')'),object[i].Ma,type)}><a><b>{object[i].Ten}</b><span>({object[i].Ma})</span> </a></li>)           
+        }
+        return renderReturn;
+    }
+    renderAirPortMienNam(type){
+        var renderReturn = [];
+        var object = null;
+        if(type=='from'){
+            object = RelationshipAirport[this.state.MSTo].MienNam;
+        }else{
+            object = RelationshipAirport[this.state.MSFrom].MienNam;
+        }
+       
+        for(let i=0; i < object.length; i++){
+            renderReturn.push(<li data-dismiss="modal" onClick={this.setStateInput.bind(this,(object[i].Ten+' ('+object[i].Ma+')'),object[i].Ma,type)}><a><b>{object[i].Ten}</b><span>({object[i].Ma})</span> </a></li>)           
+        }
+        return renderReturn;
     }
     renderModal(type){
-        var mienBac = DataAirport.NoiDia.MienBac;
-        var mienTrung = DataAirport.NoiDia.MienTrung;
-        var mienNam = DataAirport.NoiDia.MienNam;
-        if(type=='from'){
-            return (
-            <div id="myModal" class="modal fade" role="dialog">
+        
+        return (
+            <div id={type=='from'?"modal-from":"modal-to"} class="modal fade" role="dialog">
                 <div class="modal-dialog">        
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h3 class="modal-title">Điểm khởi hành</h3>
+                            <h3 class="modal-title">{type==='from'?"Điểm khởi hành":"Điểm Đến"}</h3>
                         </div>
                         <div class="modal-body">
                             <div className="row">
@@ -54,27 +116,36 @@ export default class SearchingForm extends Component{
                                 </div>
                                 <div className="col-xxs-12 col-xs-6 mt">
                                     <h4>Nội Địa</h4>
-                                     {this.state.valueTo == ''?
+                                     {(this.state.valueTo == '' && type=='from')||(this.state.valueFrom == '' && type=='to')?
                                      <ul>
                                         <li class="title">Miền Bắc</li>  
-                                        {mienBac.map((object) =>
-                                            <li data-dismiss="modal" onClick={this.setStateInputFrom.bind(this,(object.Ten+'('+object.Ma+')'))}><a><b>{object.Ten}</b><span>({object.Ma})</span> </a></li>
-                                        )}                                     
-                                    </ul>:null}  
-                                    {this.state.valueTo == ''?
+                                        {this.rederAllAirFlight(mienBac,type)}                                     
+                                    </ul>:
+                                    <ul>
+                                        <li class="title">Miền Bắc</li> 
+                                        {this.renderAirPortMienBac(type)}
+                                    </ul>
+                                    }  
+                                    {(this.state.valueTo == '' && type=='from')||(this.state.valueFrom == '' && type=='to')?
                                     <ul>       
                                         <li class="title">Miền Trung</li>
-                                        {mienTrung.map((object) =>
-                                            <li data-dismiss="modal" onClick={this.setStateInputFrom.bind(this,(object.Ten+'('+object.Ma+')'))}><a><b>{object.Ten}</b><span>({object.Ma})</span> </a></li>
-                                        )} 
-                                    </ul>:null} 
-                                    {this.state.valueTo == ''?
+                                        {this.rederAllAirFlight(mienTrung,type)}
+                                    </ul>:
+                                    <ul>
+                                        <li class="title">Miền Trung</li> 
+                                        {this.renderAirPortMienTrung(type)}
+                                    </ul>
+                                    }
+                                    {(this.state.valueTo == '' && type=='from')||(this.state.valueFrom == '' && type=='to')?
                                     <ul>       
                                         <li class="title">Miền Nam</li>
-                                        {mienNam.map((object) =>
-                                            <li data-dismiss="modal" onClick={this.setStateInputFrom.bind(this,(object.Ten+'('+object.Ma+')'))}><a><b>{object.Ten}</b><span>({object.Ma})</span> </a></li>
-                                        )}
-                                    </ul>:null}                                                                   
+                                        {this.rederAllAirFlight(mienNam,type)}
+                                    </ul>:
+                                    <ul>
+                                        <li class="title">Miền Nam</li> 
+                                        {this.renderAirPortMienNam(type)}
+                                    </ul>
+                                    }
                                 </div>
                                 <div className="col-xxs-12 col-xs-6 mt">
                                     <h4>Quốc Tế</h4>
@@ -87,8 +158,8 @@ export default class SearchingForm extends Component{
                     </div>        
                 </div>
             </div>
-          )
-        }
+        )
+        
     }
     selectPage(idPage){
         console.log(idPage);
@@ -130,6 +201,7 @@ export default class SearchingForm extends Component{
                 <div className="fh5co-hero">
                 <div className="fh5co-overlay"></div>
                 {this.renderModal('from')}
+                {this.renderModal('to')}
                 <div className="fh5co-cover" data-stellar-background-ratio="0.5" style={{backgroundImage: 'url(../../../../assets/images/cover_bg_1.jpg)'}}>
                     <div className="desc">
                         <div className="container">
@@ -152,7 +224,7 @@ export default class SearchingForm extends Component{
                                                             <label>Điểm khởi hành:</label>
                                                             <div class="input-group">
                                                                 <span class="input-group-addon" style={{backgroundColor:'#ffffff'}}><img src={airplaneUp} width={20} height={20}/></span>
-                                                                <input type="text" class="form-control" readonly="readonly" style={{backgroundColor:'#fff'}} data-toggle="modal" data-target="#myModal" value={this.state.valueFrom}/>                                                         
+                                                                <input type="text" class="form-control" readonly="readonly" style={{backgroundColor:'#fff'}} data-toggle="modal" data-target="#modal-from" value={this.state.valueFrom}/>                                                         
                                                             </div>
                                                         </div>
                                                     </div>
@@ -161,7 +233,7 @@ export default class SearchingForm extends Component{
                                                             <label>Điểm đến:</label>
                                                             <div class="input-group">
                                                                 <span class="input-group-addon" style={{backgroundColor:'#ffffff'}}><img src={airplaneDown} width={20} height={20}/></span>
-                                                                <input type="text" class="form-control" readonly="readonly" style={{backgroundColor:'#fff'}} value={this.state.valueTo}/>
+                                                                <input type="text" class="form-control" readonly="readonly" style={{backgroundColor:'#fff'}} data-toggle="modal" data-target="#modal-to" value={this.state.valueTo}/>
                                                             </div>
                                                         </div>
                                                     </div>
