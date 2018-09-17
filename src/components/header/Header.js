@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logos/airplane.png'
+import logo from '../../assets/logos/logo.png'
 import ticket from '../../assets/icons/tickets.png'
 import vnLang from '../../assets/icons/vietnam-lang.png'
 import unitedLang from '../../assets/icons/united-lang.png'
@@ -21,15 +21,15 @@ export default class Header extends Component{
       }
     render(){
         return(
-                <header id="fh5co-header-section" className="sticky-banner">
-                    <div className="container">
-                        <div className="nav-header">
-                            <a href="#" className="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-                            <h1 id="fh5co-logo"><a href="index.html"><img src={logo} width={30} height={30}/> Travel</a></h1>
+                <header id="fh5co-header-section" className="sticky-banner" style={{height:'70px'}}>
+                    <div className="container" style={{height:'70px'}}>
+                        <div className="nav-header" style={{height:'70px'}}>
+                            <a href="#" className="js-fh5co-nav-toggle fh5co-nav-toggle dark" style={{marginTop:'15px'}}><i></i></a>
+                            <h1 id="fh5co-logo" style={{marginTop:'5px'}}><a href="/home"><img src={logo} height={60}/></a></h1>
 
-                            <nav id="fh5co-menu-wrap" role="navigation">
+                            <nav id="fh5co-menu-wrap" role="navigation" style={{marginTop:'0px'}}>
                                 <ul className="sf-menu" id="fh5co-primary-menu">
-                                    <li className="active"><a href="index.html">Home</a></li>
+                                    <li className="active"><a href="/home">Home</a></li>
                                     <li>
                                         <a href="vacation.html" className="fh5co-sub-ddown">Vacations</a>
                                         <ul className="fh5co-sub-menu">
