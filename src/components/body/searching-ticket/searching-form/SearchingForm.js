@@ -324,13 +324,13 @@ export default class SearchingForm extends Component{
                                                     <div className="col-xxs-12 col-xs-12 mt" style={{display:this.state.errorAirport?'block':'none'}}>
                                                         <span className="error-message">*Tuyến bay không tồn tại*</span>
                                                     </div>
-                                                    <div className="col-xxs-12 col-xs-6 mt alternate">
+                                                    <div className={this.state.idPage!=PAGE_ONEWAY?"col-xxs-12 col-xs-6 mt alternate":"col-sm-12 mt alternate"}>
                                                         <div className="input-field">
                                                             <label>Ngày đi:</label>
                                                             <div class="input-group">
                                                                 <span class="input-group-addon" style={{backgroundColor:'#ffffff'}}><img src={dateIcon} width={20} height={20}/></span>
                                                                 <div className="datepicker-design">
-                                                                    <DatePicker locale="vn" value={this.state.dateFrom} mode="portrait" onChange={this.handleChangeFromDate.bind(this)} formatDate={(date) => moment(date).format('DD/MM/YYYY')}/>
+                                                                    <DatePicker locale="vn" value={this.state.dateFrom} mode="portrait" onChange={this.handleChangeFromDate.bind(this)} formatDate={(date) => moment(date).format('DD/MM/YYYY')} minDate={new Date()}/>
                                                                 </div>
                                                                 {/* <input type="text" value="" id="undefined-LandscapeDialog-undefined-39705" class="form-control" placeholder={moment().format("DD/MM/YYYY")}/>                                */}
                                                             </div>
@@ -344,27 +344,13 @@ export default class SearchingForm extends Component{
                                                                 <div class="input-group">
                                                                     <span class="input-group-addon" style={{backgroundColor:'#ffffff'}}><img src={dateIcon} width={20} height={20}/></span>
                                                                     <div className="datepicker-design">
-                                                                        <DatePicker locale="vn" value={this.state.dateTo} mode="portrait" onChange={this.handleChangeToDate.bind(this)} formatDate={(date) => moment(date).format('DD/MM/YYYY')}/>
+                                                                        <DatePicker locale="vn" value={this.state.dateTo} mode="portrait" onChange={this.handleChangeToDate.bind(this)} formatDate={(date) => moment(date).format('DD/MM/YYYY')} minDate={this.state.dateFrom}/>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>                                                   
                                                     }
-                                                    <div className={this.state.idPage===PAGE_ONEWAY?"col-xxs-12 col-xs-6 mt alternate":"col-sm-12 mt"}>
-                                                        <section>
-                                                            <label>Hạng ghế:</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon" style={{backgroundColor:'#ffffff'}}><img src={planeChair} width={20} height={20}/></span>
-                                                                <select class="form-control class-of-chair">
-                                                                    <option>Tất Cả</option>
-                                                                    <option>Ghế Phổ Thông</option>
-                                                                    <option>Ghế Phổ Thông Đặc Biệt</option>
-                                                                    <option>Ghế Thương Gia</option>
-                                                                    <option>Ghế Hạng Nhất</option>
-                                                                </select>
-                                                            </div>                                                      
-                                                        </section>
-                                                    </div>
+                                                
                                                     <div className="col-sm-4 col-xs-12 mt alternate">
                                                         <section>
                                                             <label className='labelPerson'>Người Lớn (> 12 Tuổi):</label>
