@@ -8,19 +8,19 @@ export default class AdPage extends Component{
                 <div class="row builder_all">
                         <div class="col-md-3 col-sm-6 builder">
                             <img class="fa fa-search"></img>
-                            <h4>Tìm kiếm dễ dàng</h4>
+                            <h4>Tìm Kiếm Dễ Dàng</h4>
                         </div>
                         <div class="col-md-3 col-sm-6 builder">
                             <img class="fa fa-telemarketer"></img>
-                            <h4>Hỗ trợ nhanh chóng</h4>
+                            <h4>Thanh Toán Nhanh Chóng</h4>
                         </div>
                         <div class="col-md-3 col-sm-6 builder">
                             <img class="fa fa-receipt"></img>
-                            <h4>Hoạt động 24/7</h4>
+                            <h4>Hoạt Động 24/7</h4>
                         </div>
                         <div class="col-md-3 col-sm-6 builder">
                             <img class="fa fa-globe"></img>
-                            <h4>Giá vé rẻ nhất</h4>
+                            <h4>Giá Vé Rẻ Nhất</h4>
                         </div>
                 </div>
             </div>
