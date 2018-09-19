@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logos/airplane.png'
-import ticket from '../../assets/icons/tickets.png'
-import vnLang from '../../assets/icons/vietnam-lang.png'
-import unitedLang from '../../assets/icons/united-lang.png'
-import iconLogin from '../../assets/icons/login.png'
+import logo from '../../assets/logos/logo.png'
 import './Footer.css'
 export default class Footer extends Component{
     constructor(props) {
@@ -26,8 +22,8 @@ export default class Footer extends Component{
                     <div class="container">
                         <div class="row row-bottom-padded-md">
                             <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                                <h3>About Travel</h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <img src={logo} height={60}/>
+                                <h3>Interest</h3>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
                                 <h3>Top Flights Routes</h3>

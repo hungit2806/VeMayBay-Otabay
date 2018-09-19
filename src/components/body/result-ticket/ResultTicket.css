@@ -1,7 +1,15 @@
 .ContainerIframe{
-    width:980px;
     margin: auto
 }
-.SearchParamDomestic {
-    background-color:#f26222 !important;
+@media screen and (min-width: 980px){
+    .ContainerIframe{
+        margin: auto;
+        width:980px;
+    }
+}
+@media screen and (max-width: 980px){
+    .ContainerIframe{
+        margin: auto;
+        width:100%;
+    }
 }

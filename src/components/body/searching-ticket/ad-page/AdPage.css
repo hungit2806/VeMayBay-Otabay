@@ -1,0 +1,44 @@
+.professional_builder {
+    padding-top: 30px;
+}
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.professional_builder .builder_all .builder {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.professional_builder .builder_all .builder .fa-search {
+    height:64px;
+    width:64px;
+    content:url("../../../../assets/images/search-flight.png");
+}
+.professional_builder .builder_all .builder .fa-telemarketer {
+    height:64px;
+    width:64px;
+    content:url("../../../../assets/images/telemarketer.png");
+}
+.professional_builder .builder_all .builder .fa-receipt {
+    height:64px;
+    width:64px;
+    content:url("../../../../assets/images/receipt.png");
+}
+.professional_builder .builder_all .builder .fa-globe {
+    height:64px;
+    width:64px;
+    content:url("../../../../assets/images/globe.png");
+}
+.builder h4{
+    color:#f26222; 
+    font-weight:bold;
+    padding-top:20px
+}
