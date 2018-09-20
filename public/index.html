@@ -23,13 +23,32 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- CS Select -->
     <link rel="stylesheet" href="css/cs-select.css">
-
+    <link href="css/thumbnail-slider.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/cs-skin-border.css" />
+    <link rel="stylesheet" type="text/css" href="css/cs-skin-border.css" />
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    
+    
+    <title>React App</title>
+  </head>
+  <body> 
+    <div id="fh5co-wrapper"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the body tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="js/thumbnail-slider.js"></script>
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/iframeResizer.min.js"></script>
     <!-- jQuery Easing -->
@@ -54,21 +73,46 @@
     <script src="js/selectFx.js"></script>
     <script src="js/root.js"></script>
     <!-- Main JS -->
-    <script src="js/main.js"></script>
-   
-    <title>React App</title>
-  </head>
-  <body> 
-    <div id="fh5co-wrapper"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the body tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script src="js/main.js"></script>   
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script>
+        $(document).on('ready', function() {
+          $('.responsive').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+              // You can unslick at a given breakpoint now by adding:
+              // settings: "unslick"
+              // instead of a settings object
+            ]
+          });
+        })
+      </script>
   </body>
 </html>

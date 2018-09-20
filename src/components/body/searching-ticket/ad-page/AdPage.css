@@ -1,5 +1,6 @@
 .professional_builder {
-    padding-top: 30px;
+    padding-top: 100px;
+    padding-bottom: 80px;
 }
 @media (min-width: 1200px){
     .container {
@@ -13,6 +14,9 @@
     margin-right: auto;
     margin-left: auto;
 }
+.professional_builder{
+    background: #f6f6f6
+}
 .professional_builder .builder_all .builder {
     text-align: center;
     padding-bottom: 10px;
@@ -20,25 +24,130 @@
 .professional_builder .builder_all .builder .fa-search {
     height:64px;
     width:64px;
-    content:url("../../../../assets/images/search.png");
+    background: url(../../../../assets/images/search.png) no-repeat; 
+    margin:auto
 }
 .professional_builder .builder_all .builder .fa-telemarketer {
     height:64px;
     width:64px;
-    content:url("../../../../assets/images/debit-card.png");
+    background: url(../../../../assets/images/debit-card.png) no-repeat; 
+    margin:auto
 }
 .professional_builder .builder_all .builder .fa-receipt {
     height:64px;
     width:64px;
-    content:url("../../../../assets/images/receipt.png");
+    background: url(../../../../assets/images/receipt.png) no-repeat; 
+    margin:auto
 }
 .professional_builder .builder_all .builder .fa-globe {
     height:64px;
     width:64px;
-    content:url("../../../../assets/images/globe.png");
+    background: url(../../../../assets/images/globe.png) no-repeat; 
+    margin:auto
 }
 .builder h4{
     color:#f26222; 
     font-weight:bold;
     padding-top:20px
 }
+.header-title{
+    margin-top:50px;
+    width:100%;
+    text-align: center
+}
+.header-title h5{
+    font-size:20px;
+    font-weight: bold;
+    color: black;
+}
+.information-company{
+    -webkit-box-shadow: 0 -6px 5px -6px black;
+	-moz-box-shadow: 0 -6px 5px -6px black;
+	box-shadow: 0 -6px 5px -6px black;
+}
+.information-company .title{
+    width: 100%;
+    font-size:24px;
+    font-weight: bold;
+    color:black;
+    text-align: center;
+    margin-top:15px
+}
+/* .information-company .content{
+    padding:10px
+} */
+.clear { clear: both; }
+
+.controls {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.cbcontrol {
+  font-size: 50px;
+  float: left;
+  color: white;
+  width: 48%;
+  text-align: center;
+  background-color: silver;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#cbControlRight { margin-right: 4%; }
+
+.cbcontrol:hover { cursor: pointer; }
+
+.stage {
+  float: left;
+  height: 330px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+}
+* {
+    box-sizing: border-box;
+  }
+
+  .slider {
+      width: 50%;
+      margin: 100px auto;
+  }
+
+  .slick-slide {
+    margin: 0px 20px;
+  }
+
+  .slick-slide img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+
+
+  .slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .2;
+  }
+
+  .slick-active {
+    opacity: .5;
+  }
+
+  .slick-current {
+    opacity: 1;
+  }
+  .slider{
+      width: 80%!important;
+  }
+ 

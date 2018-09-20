@@ -1,6 +1,9 @@
 .fh5co-hero .fh5co-overlay {  
     background-image: url("../../../../assets/images/background-search.jpg");
     background-size: cover;
+    -webkit-box-shadow: 0 7px 6px -6px black;
+	-moz-box-shadow: 0 7px 6px -6px black;
+	box-shadow: 0 7px 6px -6px black;
 }
 .datepicker-design div{
     height:42px !important;
