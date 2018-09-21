@@ -3,6 +3,9 @@ import './AdPage.css';
 import Airplane1 from '../../../../assets/images/Airplane1.jpg'
 import Tick from '../../../../assets/icons/checked.png'
 export default class AdPage extends Component{
+    imageClick(){
+        console.log("click ne");
+    }
     render(){
         return(
             <div>
@@ -42,27 +45,31 @@ export default class AdPage extends Component{
                         <div class="col-md-6 col-sm-6 content"><img src={Tick} style={{width:'20px'}}></img> Quý khách luôn tìm được vé rẻ cho mình với chức năng tìm vé rẻ theo tháng của chúng tôi.</div> 
                     </div>
                 </div>
-                <section class="slider responsive">
-                    <div>
-                    <img src="http://placehold.it/350x300?text=1"/>
-                    </div>
-                    <div>
-                    <img src="http://placehold.it/350x300?text=2"/>
-                    </div>
-                    <div>
-                    <img src="http://placehold.it/350x300?text=3"/>
-                    </div>
-                    <div>
-                    <img src="http://placehold.it/350x300?text=4"/>
-                    </div>
-                    <div>
-                    <img src="http://placehold.it/350x300?text=5"/>
-                    </div>
-                    <div>
-                    <img src="http://placehold.it/350x300?text=6"/>
-                    </div>
-                </section>
+                <div class="container-slider">
+                    <div class="title">Điểm du lịch phổ biến</div>
+                    <section class="slider responsive">
+                        <div>
+                        <img src="http://placehold.it/350x300?text=1"/>
+                        <div style={{width:'100%',height:'30%',position:'absolute'}}></div>
+                        </div>
+                        <div>
+                        <img src="http://placehold.it/350x300?text=2"/>
+                        </div>
+                        <div>
+                        <img src="http://placehold.it/350x300?text=3"/>
+                        </div>
+                        <div>
+                        <img src="http://placehold.it/350x300?text=4"/>
+                        </div>
+                        <div>
+                        <img src="http://placehold.it/350x300?text=5"/>
+                        </div>
+                        <div>
+                        <img src="http://placehold.it/350x300?text=6"/>
+                        </div>
+                    </section>
                 </div>
+            </div>
                 
         );
     }

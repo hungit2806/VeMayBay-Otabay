@@ -1,0 +1,12 @@
+#footer{
+    -webkit-box-shadow: 0 -6px 5px -6px black;
+	-moz-box-shadow: 0 -6px 5px -6px black;
+    box-shadow: 0 -6px 5px -6px black;
+    background:#fff !important;
+}
+#footer .fh5co-footer-link li a{
+    color: black
+}
+#footer .fh5co-footer-link h3{
+    color: black
+}

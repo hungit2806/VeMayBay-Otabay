@@ -60,7 +60,8 @@
     font-weight: bold;
     color: black;
 }
-.information-company{
+.information-company{  
+    padding-bottom:20px;
     -webkit-box-shadow: 0 -6px 5px -6px black;
 	-moz-box-shadow: 0 -6px 5px -6px black;
 	box-shadow: 0 -6px 5px -6px black;
@@ -69,7 +70,7 @@
     width: 100%;
     font-size:24px;
     font-weight: bold;
-    color:black;
+    color:#f26222;
     text-align: center;
     margin-top:15px
 }
@@ -117,7 +118,7 @@
 
   .slider {
       width: 50%;
-      margin: 100px auto;
+      margin: auto;
   }
 
   .slick-slide {
@@ -149,5 +150,22 @@
   }
   .slider{
       width: 80%!important;
+  }
+  .container-slider{
+        width:100%;
+        padding-top: 30px;
+        padding-bottom:40px;
+        background:#f6f6f6;
+        -moz-box-shadow:    inset  0  8px 8px -8px black;
+        -webkit-box-shadow: inset  0  8px 8px -8px black; 
+        box-shadow:        inset  0  8px 8px -8px black;
+  }
+  .container-slider .title{
+    width: 100%;
+    font-size:24px;
+    font-weight: bold;
+    color:#f26222;
+    text-align: center;
+    margin-bottom: 20px
   }
  

@@ -21,9 +21,8 @@ export default class Footer extends Component{
                 <div id="footer">
                     <div class="container">
                         <div class="row row-bottom-padded-md">
-                            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                            <div class="col-md-4 col-sm-4 col-xs-12 fh5co-footer-link">
                                 <img src={logo} height={60}/>
-                                <h3>Interest</h3>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
                                 <h3>Top Flights Routes</h3>
@@ -61,13 +60,6 @@ export default class Footer extends Component{
                                     <li><a href="#">Dubai</a></li>
                                     <li><a href="#">Singapore</a></li>
                                     <li><a href="#">Hongkong</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                                <h3>Affordable</h3>
-                                <ul>
-                                    <li><a href="#">Food &amp; Drink</a></li>
-                                    <li><a href="#">Fare Flights</a></li>
                                 </ul>
                             </div>
                         </div>
