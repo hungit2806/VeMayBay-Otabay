@@ -249,11 +249,9 @@ export default class SearchingForm extends Component{
         })
     }
     handleChangeFromDate(e, date){
-        console.log(e, date);
         this.setState({dateFrom: date})
     }
     handleChangeToDate(e, date){
-        console.log(e, date);
         this.setState({dateTo: date})
     }
     renderAdultSelect(){

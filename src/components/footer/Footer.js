@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../assets/logos/logo.png'
 import './Footer.css'
+import {DataAirport} from '../../data-mock/data-airport'
 export default class Footer extends Component{
     constructor(props) {
         super(props);
@@ -15,55 +16,58 @@ export default class Footer extends Component{
           isOpen: !this.state.isOpen
         });
       }
+      renderTagliFooter(data){
+          var renderMT = []
+          for(let obj in data){
+            renderMT.push(<li onClick={this.scrollToTop.bind(this,data[obj])}><a>{data[obj].Ten}</a></li>)
+          }
+          return renderMT;
+      }
+    scrollToTop(data){
+        window.scrollTo(0, 0);
+    }
     render(){
         return(
             <footer>
                 <div id="footer">
                     <div class="container">
                         <div class="row row-bottom-padded-md">
-                            <div class="col-md-4 col-sm-4 col-xs-12 fh5co-footer-link">
+                            <div class="col-md-3 col-sm-3 col-md-offset-1 col-sm-offset-1 col-xs-12 fh5co-footer-link">
                                 <img src={logo} height={60}/>
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                                <h3>Top Flights Routes</h3>
                                 <ul>
-                                    <li><a href="#">Manila flights</a></li>
-                                    <li><a href="#">Dubai flights</a></li>
-                                    <li><a href="#">Bangkok flights</a></li>
-                                    <li><a href="#">Tokyo Flight</a></li>
-                                    <li><a href="#">New York Flights</a></li>
+                                    <li style={{marginTop:'15px'}}><a href="#">Liên Hệ</a></li>
+                                    <li><a href="#">Quy Định Sử Dụng</a></li>
+                                    <li><a href="#">Chính Sách Bảo Mật</a></li>
+                                    <li><a href="#">Hướng Dẫn Thanh Toán</a></li>
+                                    <li><a href="#">Hướng Dẫn Đặt Vé</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                                <h3>Top Hotels</h3>
-                                <ul>
-                                    <li><a href="#">Boracay Hotel</a></li>
-                                    <li><a href="#">Dubai Hotel</a></li>
-                                    <li><a href="#">Singapore Hotel</a></li>
-                                    <li><a href="#">Manila Hotel</a></li>
+                                <h3>Miền Bắc</h3>
+                                <ul>                                  
+                                    {this.renderTagliFooter(DataAirport.NoiDia.MienBac)}
                                 </ul>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                                <h3>Interest</h3>
-                                <ul>
-                                    <li><a href="#">Beaches</a></li>
-                                    <li><a href="#">Family Travel</a></li>
-                                    <li><a href="#">Budget Travel</a></li>
-                                    <li><a href="#">Food &amp; Drink</a></li>
-                                    <li><a href="#">Honeymoon and Romance</a></li>
+                                <h3>Miền Trung</h3>
+                                <ul>                                  
+                                    {this.renderTagliFooter(DataAirport.NoiDia.MienTrung)}
                                 </ul>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                                <h3>Best Places</h3>
-                                <ul>
-                                    <li><a href="#">Boracay Beach</a></li>
-                                    <li><a href="#">Dubai</a></li>
-                                    <li><a href="#">Singapore</a></li>
-                                    <li><a href="#">Hongkong</a></li>
+                                <h3>Miền Nam</h3>
+                                <ul>                                  
+                                    {this.renderTagliFooter(DataAirport.NoiDia.MienNam)}
+                                </ul>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                                <h3>Quốc Tế</h3>
+                                <ul>                                  
+                                    {this.renderTagliFooter(DataAirport.QuocTe)}
                                 </ul>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style={{marginTop:'10px'}}>
                             <div class="col-md-6 col-md-offset-3 text-center">
                                 <p class="fh5co-social-icons">
                                     <a href="#"><i class="icon-twitter2"></i></a>

@@ -1,12 +1,12 @@
 #footer{
-    -webkit-box-shadow: 0 -6px 5px -6px black;
-	-moz-box-shadow: 0 -6px 5px -6px black;
-    box-shadow: 0 -6px 5px -6px black;
-    background:#fff !important;
+    padding-Top:20px;
+    padding-bottom:0px;
+    background: #1c1c1c
 }
-#footer .fh5co-footer-link li a{
-    color: black
+.row-bottom-padded-md{
+    padding-bottom:0px;
+    border-bottom: 1px solid #fff
 }
-#footer .fh5co-footer-link h3{
-    color: black
+#footer .fh5co-footer-link{
+    padding-bottom: 0px
 }

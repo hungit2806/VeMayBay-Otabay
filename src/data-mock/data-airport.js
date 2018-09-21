@@ -1,5 +1,6 @@
 export const DataAirport={
-    QuocTe:{},
+    QuocTe:{
+    },
     NoiDia:{
         MienBac:{
             HN:{

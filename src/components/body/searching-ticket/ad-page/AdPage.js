@@ -50,7 +50,6 @@ export default class AdPage extends Component{
                     <section class="slider responsive">
                         <div>
                         <img src="http://placehold.it/350x300?text=1"/>
-                        <div style={{width:'100%',height:'30%',position:'absolute'}}></div>
                         </div>
                         <div>
                         <img src="http://placehold.it/350x300?text=2"/>
