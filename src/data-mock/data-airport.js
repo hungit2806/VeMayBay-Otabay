@@ -1,3 +1,24 @@
+import HaNoi from '../assets/images/location/HaNoi.jpg'
+import QuangBinh from '../assets/images/location/QuangBinh.jpg'
+import DienBien from '../assets/images/location/DienBien.jpg'
+import Pleiku from '../assets/images/location/Pleiku.jpg'
+import ThanhHoa from '../assets/images/location/ThanhHoa.jpg'
+import QuangNam from '../assets/images/location/TamKy.jpg'
+import SaiGon from '../assets/images/location/SaiGon.jpg'
+import QuyNhon from '../assets/images/location/QuyNhon.jpg'
+import PhuYen from '../assets/images/location/PhuYen.jpg'
+import PhuQuoc from '../assets/images/location/PhuQuoc.jpg'
+import NhaTrang from '../assets/images/location/NhaTrang.jpg'
+import NgheAn from '../assets/images/location/NgheAn.jpg'
+import KienGiang from '../assets/images/location/KienGiang.jpg'
+import Hue from '../assets/images/location/Hue.jpg'
+import HaiPhong from '../assets/images/location/HaiPhong.jpg'
+import DaNang from '../assets/images/location/DaNang.jpg'
+import DaLat from '../assets/images/location/DaLat.jpg'
+import CanTho from '../assets/images/location/CanTho.jpg'
+import CaMau from '../assets/images/location/CaMau.jpg'
+import BuonMeThuot from '../assets/images/location/BuonMeThuot.jpg'
+import ConDao from '../assets/images/location/ConDao.jpg'
 export const DataAirport={
     QuocTe:{
     },
@@ -6,21 +27,24 @@ export const DataAirport={
             HN:{
                 Ten:"Hà Nội",
                 Ma:"HAN",
+                img: HaNoi
                 
             },
             HP:{
                 Ten:"Hải Phòng",
                 Ma:"HPH",
+                img: HaiPhong
                 
             },
             DB:{
                 Ten:"Điện Biên",
                 Ma:"DIN",
-                
+                img:DienBien
             },
             TH:{
                 Ten:"Thanh Hóa",
                 Ma:"THD",
+                img: ThanhHoa
                 
             },
         },
@@ -28,40 +52,45 @@ export const DataAirport={
             DH:{
                 Ten:"Đồng Hới",
                 Ma:"VDH",
-                
+                img:QuangBinh
             },
             HU:{
                 Ten:"Huế",
                 Ma:"HUI",
-                
+                img:Hue
             },
             VI:{
                 Ten:"Vinh",
                 Ma:"VII",
-                
+                img:NgheAn
             },
             DN:{
                 Ten:"Đà Nẵng",
                 Ma:"DAD",
+                img:DaNang
                
             },
             CL:{
                 Ten: "Quảng Nam",
-                Ma:"VCL"
+                Ma:"VCL",
+                img:QuangNam
             },
             QN:{
                 Ten:"Quy Nhơn",
                 Ma:"UIH",
+                img:QuyNhon
                
             },
             TH:{
                 Ten:"Tuy Hòa",
                 Ma:"TBB",
+                img:PhuYen
                 
             },
             PL:{
                 Ten:"Pleiku",
                 Ma:"PXU",
+                img:Pleiku
                 
             },
         },
@@ -69,47 +98,55 @@ export const DataAirport={
             SG:{
                 Ten:"Sài Gòn",
                 Ma:"SGN",
+                img:SaiGon
                
             },
             NT:{
                 Ten:"Nha Trang",
                 Ma:"CXR",
+                img:NhaTrang
                 
             },
             BMT:{
                 Ten:"Buôn Mê Thuột",
                 Ma:"BMV",
+                img:BuonMeThuot
                 
             },
             DL:{
                 Ten:"Đà Lạt",
                 Ma:"DLI",
+                img:DaLat
                
             },
             CT:{
                 Ten:"Cần Thơ",
                 Ma:"VCA",
+                img:CanTho
                 
             },
             CM:{
                 Ten:"Cà Mau",
                 Ma:"CAH",
+                img:CaMau
                 
             },
             CD:{
                 Ten:"Côn Đảo",
                 Ma:"VCS",
+                img:ConDao
                 
             },
             PQ:{
                 Ten:"Phú Quốc",
                 Ma:"PQC",
+                img:PhuQuoc
                 
             },
             KG:{
                 Ten:"Kiên Giang",
                 Ma:"VKG",
-                
+                img:KienGiang             
             },
         }
     }

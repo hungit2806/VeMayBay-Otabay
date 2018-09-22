@@ -2,9 +2,48 @@ import React, { Component } from 'react';
 import './AdPage.css';
 import Airplane1 from '../../../../assets/images/Airplane1.jpg'
 import Tick from '../../../../assets/icons/checked.png'
+import { DataAirport } from '../../../../data-mock/data-airport'
+import AirAsia from '../../../../assets/images/hangve/air-asia.png'
+import Cathay from '../../../../assets/images/hangve/cathay.png'
+import Cebu from '../../../../assets/images/hangve/cebu.png'
+import Emirates from '../../../../assets/images/hangve/emirates.png'
+import Hok from '../../../../assets/images/hangve/hok.png'
+import Jetstar from '../../../../assets/images/hangve/jetstart.png'
+import Malaysia from '../../../../assets/images/hangve/malaysia.png'
+import Scot from '../../../../assets/images/hangve/scoot.jpg'
+import Singapo from '../../../../assets/images/hangve/singapore.png'
+import Thailion from '../../../../assets/images/hangve/thailion.png'
+import Vietjet from '../../../../assets/images/hangve/vietjet.png'
+import VNairline from '../../../../assets/images/hangve/vnairline.png'
+const HangVe = [AirAsia,Cathay,Cebu,Emirates,Hok,Jetstar,Malaysia,Scot,Singapo,Thailion,Vietjet,VNairline]
 export default class AdPage extends Component{
     imageClick(){
         console.log("click ne");
+    }
+    renderImgSlider(){
+        var renderImg = []
+        for (let obj in DataAirport.NoiDia){
+            let VungMien = DataAirport.NoiDia[obj]
+            for(let obj2 in VungMien){
+                renderImg.push( 
+                    <div>
+                        <img class="img-slider" src={VungMien[obj2].img}/>
+                        <div class="name-location">{VungMien[obj2].Ten}</div>
+                    </div>);
+            }
+        }
+        return renderImg;
+    }
+    renderHangVe(){
+        var renderHang = []
+        HangVe.map((obj,index)=>{
+            renderHang.push(
+                <div>
+                    <img class="img-slider" style={{height:'30px',width:'auto'}} src={obj}/>
+                </div>
+            )
+        })
+        return renderHang;
     }
     render(){
         return(
@@ -48,24 +87,12 @@ export default class AdPage extends Component{
                 <div class="container-slider">
                     <div class="title">Điểm du lịch phổ biến</div>
                     <section class="slider responsive">
-                        <div>
-                        <img src="http://placehold.it/350x300?text=1"/>
-                        </div>
-                        <div>
-                        <img src="http://placehold.it/350x300?text=2"/>
-                        </div>
-                        <div>
-                        <img src="http://placehold.it/350x300?text=3"/>
-                        </div>
-                        <div>
-                        <img src="http://placehold.it/350x300?text=4"/>
-                        </div>
-                        <div>
-                        <img src="http://placehold.it/350x300?text=5"/>
-                        </div>
-                        <div>
-                        <img src="http://placehold.it/350x300?text=6"/>
-                        </div>
+                       {this.renderImgSlider()}
+                    </section>
+                </div>
+                <div class="airplane-info">
+                    <section class="slider responsive">
+                        {this.renderHangVe()}
                     </section>
                 </div>
             </div>

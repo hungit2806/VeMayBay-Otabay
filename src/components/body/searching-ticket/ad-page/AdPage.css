@@ -168,4 +168,31 @@
     text-align: center;
     margin-bottom: 20px
   }
- 
+
+    .name-location{
+        width: 100% !important;
+        text-align: center !important;
+        color: #000 !important;
+        font-weight: bold !important
+    
+}
+.img-slider{
+   cursor: pointer; 
+}
+.airplane-info{
+    background: #ffffff;
+    -webkit-box-shadow: 0 -6px 5px -6px black;
+	-moz-box-shadow: 0 -6px 5px -6px black;
+	box-shadow: 0 -6px 5px -6px black;
+}
+.airplane-info .slick-list{
+    width: 100% !important;
+}
+
+.airplane-info .slider{
+    width: 100% !important;
+}
+.airplane-info .slick-slide {
+    opacity: 1;
+}
+
