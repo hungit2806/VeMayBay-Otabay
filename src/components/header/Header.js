@@ -29,15 +29,13 @@ export default class Header extends Component{
 
                             <nav id="fh5co-menu-wrap" role="navigation" style={{marginTop:'0px'}}>
                                 <ul className="sf-menu" id="fh5co-primary-menu">
-                                    <li className="active"><a href="/home">Home</a></li>
+                                    <li className="active"><a href="/home">Trang Chủ</a></li>
                                     <li>
-                                        <a href="vacation.html" className="fh5co-sub-ddown">Vacations</a>
+                                        <a href="home.html" className="fh5co-sub-ddown">Chuyên Mục</a>
                                         <ul className="fh5co-sub-menu">
-                                            <li><a href="#">Family</a></li>
-                                            <li><a href="#">CSS3 &amp; HTML5</a></li>
-                                            <li><a href="#">Angular JS</a></li>
-                                            <li><a href="#">Node JS</a></li>
-                                            <li><a href="#">Django &amp; Python</a></li>
+                                            <li><a href="#">Hướng Dẫn Đặt Vé</a></li>
+                                            <li><a href="#">Vé Rẻ Trong Tháng</a></li>
+                                            <li><a href="#">Giới Thiệu</a></li>
                                         </ul>
                                     </li>                                    
                                 </ul>

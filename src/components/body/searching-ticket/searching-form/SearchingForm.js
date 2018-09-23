@@ -9,6 +9,7 @@ import baby from '../../../../assets/icons/baby.png'
 import adult from '../../../../assets/icons/adult.png'
 import search from '../../../../assets/icons/search.png'
 import circle from '../../../../assets/icons/circle.png'
+import Tick from '../../../../assets/icons/check-mark.png'
 import DatePicker from '../../../extend-component/DatePicker';
 import { DataAirport,RelationshipAirport } from '../../../../data-mock/data-airport'
 import moment from 'moment';
@@ -395,10 +396,12 @@ export default class SearchingForm extends Component{
                                 </div>                          
                                 <div class="desc2 animate-box">
                                     <div class="col-sm-4 col-sm-push-1 col-md-4 col-md-push-1">
-                                        <h2>BayMo.Com </h2>
-                                        <h3>* Săn Vé Máy Bay Giá Rẻ</h3>
-                                        <h3>* Giao dịch Uy Tín - Xuất Vé Nhanh Chóng</h3>
-                                    </div>
+                                        <h2>BayMo.net </h2>
+      
+                                            <h3>Săn Vé Máy Bay Giá Rẻ</h3>
+                                            <h3>Giao dịch Uy Tín - Xuất Vé Nhanh Chóng</h3>
+                                              
+                                    </div>                           
                                 </div>
                             </div>
                         </div>
