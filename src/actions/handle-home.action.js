@@ -1,0 +1,1 @@
+export const SET_LOCATION_TO = "[HOME] SET_LOCATION_TO";
