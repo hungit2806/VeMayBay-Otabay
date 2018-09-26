@@ -16,7 +16,7 @@ export default class ResultTicket extends Component{
     render(){
         return(
                 <div className="ContainerIframe" style={{marginTop:"30px",marginBottom:'30px'}}>  
-                    <iframe name="flightframe" scrolling="no" id="flightframe" src="https://sbs.datacom.vn/Flights.aspx?ProductKey=nrv7y2kldkxfwxz" frameborder="0" style={{width:'100%',height:'600px'}}></iframe>    
+                    <iframe name="flightframe" scrolling="no" id="flightframe" src="https://sbs.datacom.vn/Flights.aspx?ProductKey=r1e0q6z8md6akul" frameborder="0" style={{width:'100%',height:'600px'}}></iframe>    
                 </div>       
         )
     }

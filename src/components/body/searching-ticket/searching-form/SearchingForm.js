@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import airplaneUp from '../../../../assets/icons/airplane-up.png'
 import airplaneDown from '../../../../assets/icons/airplane-down.png'
 import dateIcon from '../../../../assets/icons/date.png'
-import planeChair from '../../../../assets/icons/plane-chair.png'
-import family from '../../../../assets/icons/family.png'
 import child from '../../../../assets/icons/child.png'
 import baby from '../../../../assets/icons/baby.png'
 import adult from '../../../../assets/icons/adult.png'
 import search from '../../../../assets/icons/search.png'
 import circle from '../../../../assets/icons/circle.png'
-import Tick from '../../../../assets/icons/check-mark.png'
 import DatePicker from '../../../extend-component/DatePicker';
 import { DataAirport,RelationshipAirport } from '../../../../data-mock/data-airport'
 import moment from 'moment';
@@ -20,6 +17,10 @@ const PAGE_ROUNDTRIP = 1;
 var mienBac = DataAirport.NoiDia.MienBac;
 var mienTrung = DataAirport.NoiDia.MienTrung;
 var mienNam = DataAirport.NoiDia.MienNam;
+var dongNamA = DataAirport.QuocTe.DongNamA;
+var dongBacA = DataAirport.QuocTe.DongBacA;
+var chauAu = DataAirport.QuocTe.ChauAu;
+var chauUc = DataAirport.QuocTe.ChauUc;
 
 export default class SearchingForm extends Component{
     
@@ -163,13 +164,14 @@ export default class SearchingForm extends Component{
             mienNam = DataAirport.NoiDia.MienNam;
         }
     }
-    setStateInput(value,MS,type){
+    setStateInput(value,MS,type,location){
         if(type=='from'){
             this.setState({
                 valueFrom:value,
                 MSFrom:MS
             },function(){
-                this.checkAirport(type,MS);
+                if(location!='QuocTe')
+                    this.checkAirport(type,MS);
             })
         }else{
             this.setState({
@@ -177,15 +179,16 @@ export default class SearchingForm extends Component{
                 MSTo:MS
             },
             function(){
-                this.checkAirport(type,MS);
+                if(location!='QuocTe')
+                    this.checkAirport(type,MS);
             })
         }      
     }
-    rederAllAirFlight(obj,type){
+    rederAllAirFlight(obj,type,location){
         var renderReturn = []
         for (var prop in obj) {
             var object = obj[prop];
-            renderReturn.push(<li data-dismiss="modal" onClick={this.setStateInput.bind(this,(object.Ten+' ('+object.Ma+')'),object.Ma,type)}><a><b>{object.Ten}</b><span>({object.Ma})</span> </a></li>)           
+            renderReturn.push(<li data-dismiss="modal" onClick={this.setStateInput.bind(this,(object.Ten+' ('+object.Ma+')'),object.Ma,type,location)}><a><b>{object.Ten}</b><span>({object.Ma})</span> </a></li>)           
         }
         return renderReturn;
     }
@@ -210,19 +213,35 @@ export default class SearchingForm extends Component{
                                     <h4>Nội Địa</h4>                 
                                      <ul>
                                         <li class="title">Miền Bắc</li>  
-                                        {this.rederAllAirFlight(mienBac,type)}                                     
+                                        {this.rederAllAirFlight(mienBac,type,'NoiDia')}                                     
                                     </ul>                                   
                                     <ul>       
                                         <li class="title">Miền Trung</li>
-                                        {this.rederAllAirFlight(mienTrung,type)}
+                                        {this.rederAllAirFlight(mienTrung,type,'NoiDia')}
                                     </ul>                 
                                     <ul>       
                                         <li class="title">Miền Nam</li>
-                                        {this.rederAllAirFlight(mienNam,type)}
+                                        {this.rederAllAirFlight(mienNam,type,'NoiDia')}
                                     </ul>
                                 </div>
                                 <div className="col-xxs-12 col-xs-6 mt">
                                     <h4>Quốc Tế</h4>
+                                    <ul>
+                                        <li class="title">Đông Nam Á</li>  
+                                        {this.rederAllAirFlight(dongNamA,type,'QuocTe')}                                     
+                                    </ul>                                   
+                                    <ul>       
+                                        <li class="title">Đông Bắc Á</li>
+                                        {this.rederAllAirFlight(dongBacA,type,'QuocTe')}
+                                    </ul>                 
+                                    <ul>       
+                                        <li class="title">Châu Âu</li>
+                                        {this.rederAllAirFlight(chauAu,type,'QuocTe')}
+                                    </ul>
+                                    <ul>       
+                                        <li class="title">Châu Úc</li>
+                                        {this.rederAllAirFlight(chauUc,type,'QuocTe')}
+                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -21,6 +21,66 @@ import BuonMeThuot from '../assets/images/location/BuonMeThuot.jpg'
 import ConDao from '../assets/images/location/ConDao.jpg'
 export const DataAirport={
     QuocTe:{
+        DongNamA:{
+            BK:{
+                Ten:"Bangkok",
+                Ma:"BKK"
+            },
+            SIN:{
+                Ten:"Singapore",
+                Ma:"SIN"
+            },
+            KU:{
+                Ten:"Kuala Lumpur",
+                Ma:"KUL"
+            },
+            JA:{
+                Ten:"Jakarta",
+                Ma:"JKT"
+            },
+        },
+        DongBacA:{
+            TK:{
+                Ten:"Tokyo",
+                Ma:"TYO"
+            },
+            BK:{
+                Ten:"Bắc Kinh",
+                Ma:"PEK"
+            },
+            CAN:{
+                Ten:"Quảng Châu",
+                Ma:"KUL"
+            },
+            SE:{
+                Ten:"Seoul",
+                Ma:"ICN"
+            },
+            HK:{
+                Ten:"Hồng Kông",
+                Ma:"HKG"
+            },
+        },
+        ChauAu:{
+            FR:{
+                Ten:"Frankfurt",
+                Ma:"FRA"
+            },
+            Paris:{
+                Ten:"Paris",
+                Ma:"PAR"
+            }
+        },
+        ChauUc:{
+            SY:{
+                Ten:"Sydney",
+                Ma:"SYD"
+            },
+            MEL:{
+                Ten:"Melbourne",
+                Ma:"MEL"
+            }
+        },
     },
     NoiDia:{
         MienBac:{
